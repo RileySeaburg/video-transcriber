@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+    <title>VTranscripts Inc.</title>
+    <!-- Custom CSS -->
+    <link href="../assets/css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    <a class="navbar-brand d-block d-md-none" href="/index">
+                        
+                    </a>
+                    <div class="d-none d-md-block text-center">
+                        <a class="sidebartoggler waves-effect waves-light d-flex align-items-center side-start" href="javascript:void(0)" data-sidebartype="mini-sidebar">
+                            <i class="mdi mdi-menu"></i>
+                            <span class="navigation-text ml-3">Menu</span>
+                        </a>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto">
+                        
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right">
+                    	<!-- ============================================================== -->
+                        <!-- Messages -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="font-18 mdi mdi-bell"></i>
+                                <div class="notify">
+                                    <span class="heartbit"></span>
+                                    <span class="point"></span>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown" aria-labelledby="2">
+                                <ul class="list-style-none">
+                                    <li>
+                                        <div class="drop-title border-bottom">You have 2 new notification</div>
+                                    </li>
+                                    <li>
+                                        <div class="message-center message-body">
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="message-item">
+                                                <span class="mail-contnet">
+                                                    <h5 class="message-title">Video1</h5> <span class="mail-desc">Video1 transcripts complete</span> <span class="time">9:30 AM</span>
+                                                </span>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="message-item">
+                                                <span class="mail-contnet">
+                                                    <h5 class="message-title">Video2</h5> <span class="mail-desc">Video2 transcripts complete</span> <span class="time">9:10 AM</span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link text-center link text-dark" href="javascript:void(0);"> <b>See all Notifications</b> <i class="fa fa-angle-right"></i> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="ml-2 user-text font-medium" th:text="${user.firstName}"></span><span class="fas fa-angle-down ml-2 user-text"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
+                                <div class="d-flex no-block align-items-center p-3 mb-2 border-bottom">
+                                    <div class="ml-2">
+                                        <h4 class="mb-0" th:text="${user.firstName}"></h4>
+                                        <p class=" mb-0 text-muted" th:text="${user.email}"></p>
+                                        <a href="javascript:void(0)" class="btn btn-sm btn-danger text-white mt-2 btn-rounded">View Profile</a>
+                                    </div>
+                                </div>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user mr-1 ml-1"></i> My Profile</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet mr-1 ml-1"></i> My Balance</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/logout"><i class="fa fa-power-off mr-1 ml-1"></i> Logout</a>
+                            </div>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/dashboard" aria-expanded="false"><i class="far fa-id-card"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li class="sidebar-item selected"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#" aria-expanded="false"><i class="mdi mdi-cloud-upload"></i><span class="hide-menu">Upload</span></a></li>
+                        <li class="sidebar-item" th:if="${user.isAdmin}"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/users" aria-expanded="false"><i class="far fa-user-circle"></i><span class="hide-menu">Users</span></a></li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-xs-12 align-self-center">
+                        <h5 class="font-medium text-uppercase mb-0">Upload</h5>
+                    </div>
+                </div>
+            </div>  -->
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="page-content container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-12">
+                        <div th:if="!${upgradeRequired}" class="card border-dark">
+                        	<div class="card-header bg-dark">
+        						<h4 class="mb-0 text-white">Upload Video</h4>
+        					</div>
+                            <div class="card-body">
+                                <h5 class="card-title text-uppercase">Upload video to get transcripts</h5>
+		                        <form class="form-material" action="/videoUpload" method="post" enctype="multipart/form-data">
+		                        	
+		                        	<div class="row">
+		                        		<div class="col-md-12">
+				                            <div class="form-group">
+				                                <label>Enter speechContext(comma separated)</label>
+				                                <input id="speechContext" name="speechContext" type="text" class="form-control form-control-line" placeholder="Speech context">
+				                            </div>
+				                        </div>
+			                        </div>
+			                        
+			                        <div class="row">
+			                        	<div class="col-md-6">
+				                            <div class="form-group">
+				                                <label>Language Code</label>
+				                                <div>
+				                                    <select class="form-control" id="languageCode" name="languageCode">
+				                                        <option value="en-US">English(US)</option>
+				                                        <option value="en-CA">English(Canada)</option>
+				                                        <option value="en-AU">English(Australia)</option>
+				                                        <option value="en-GB">English(Great Britain)</option>
+				                                        <option value="en-IN">English(India)</option>
+				                                        <option value="en-ZA">English(South Africa)</option>
+				                                    </select>
+				                                </div>
+				                            </div>
+				                        </div>
+			                        	<div class="col-md-6">
+				                            <div class="form-group">
+				                                <label>Interaction type</label>
+				                                <div>
+				                                    <select class="form-control" id="interactionType" name="interactionType">
+				                                        <option value="INTERACTION_TYPE_UNSPECIFIED">UNSPECIFIED</option>
+				                                        <option value="DISCUSSION">DISCUSSION</option>
+				                                        <option value="PRESENTATION">PRESENTATION</option>
+				                                        <option value="PHONE_CALL">PHONE_CALL</option>
+				                                        <option value="VOICEMAIL">VOICEMAIL</option>
+				                                        <option value="PROFESSIONALLY_PRODUCED">PROFESSIONALLY_PRODUCED</option>
+				                                        <option value="VOICE_SEARCH">VOICE_SEARCH</option>
+				                                        <option value="VOICE_COMMAND">VOICE_COMMAND</option>
+				                                        <option value="DICTATION">DICTATION</option>
+				                                    </select>
+				                                </div>
+				                            </div>
+				                        </div>
+			                        </div>
+			                        
+			                        <div class="row">
+			                        	<div class="col-md-6">
+				                            <div class="form-group">
+				                                <label>Microphone Distance</label>
+				                                <div>
+				                                    <select class="form-control" id="microphoneDistance" name="microphoneDistance">
+				                                        <option value="MICROPHONE_DISTANCE_UNSPECIFIED">UNSPECIFIED</option>
+				                                        <option value="NEARFIELD">NEARFIELD</option>
+				                                        <option value="MIDFIELD">MIDFIELD</option>
+				                                        <option value="FARFIELD">FARFIELD</option>
+				                                    </select>
+				                                </div>
+				                            </div>
+				                        </div>
+			                        	<div class="col-md-6">
+				                            <div class="form-group">
+				                                <label>Recording Device Type</label>
+				                                <div>
+				                                    <select class="form-control" id="recordingDeviceType" name="recordingDeviceType">
+				                                        <option value="RECORDING_DEVICE_TYPE_UNSPECIFIED">UNSPECIFIED</option>
+				                                        <option value="SMARTPHONE">SMARTPHONE</option>
+				                                        <option value="PC">PC</option>
+				                                        <option value="PHONE_LINE">PHONE_LINE</option>
+				                                        <option value="VEHICLE">VEHICLE</option>
+				                                        <option value="OTHER_OUTDOOR_DEVICE">OTHER_OUTDOOR_DEVICE</option>
+				                                        <option value="OTHER_INDOOR_DEVICE">OTHER_INDOOR_DEVICE</option>
+				                                    </select>
+				                                </div>
+				                            </div>
+				                        </div>
+			                        </div>
+			                        
+			                        <div class="row">
+			                        	<div class="col-md-6">
+				                            <div class="form-group">
+				                                <label>Description of the content</label>
+				                                <input id="audioTopic" name="audioTopic" type="text" class="form-control form-control-line" placeholder="Content description">
+				                                <span class="help-block"><small>A block of help text that breaks onto a new line and may extend beyond one line.</small></span>
+				                            </div>
+				                        </div>
+			                        	<div class="col-md-6">
+			                        		<div class="form-group">
+				                                <label>Upload video(.mp4)</label>
+				                        		<div class="custom-file">
+		                                            <input type="file" class="custom-file-input" id="file" name="file" accept="video/*" required="required">
+		                                            <label class="custom-file-label" for="file">Choose file</label>
+		                                        </div>
+		                                    </div>
+			                        	</div>
+			                        </div>
+			                        
+			                        <div class="row">
+				                        <div class="col-lg-2 col-md-4 offset-md-5">
+										    <button type="submit" class="btn btn-rounded btn-block btn-danger">Upload</button>
+										</div>
+									</div>
+			                        
+		                        </form>
+                            </div>
+                            <div class="card-footer text-danger">
+						        You can just upload video for transcription, and leave other options blank. We will decide the right options for your video!
+						    </div>
+                        </div>
+                        
+                        
+                        <!-- In case credits are 0 -->
+                        <div th:if="${upgradeRequired}" class="card">
+                            <div class="card-body">
+                                <div class="card-group">
+                                    <div class="card border-top mt-4">
+                                        <div class="p-3 text-center">
+                                            <h4 class="card-title mt-2 text-center">Basic</h4>
+                                            <h2 class="display-5 position-relative mt-3 mb-2">
+                                                <span class="price-sign">$</span>10
+                                            </h2>
+                                            <p>For 10 videos per month</p>
+                                        </div>
+                                        <div class="border-top">
+                                            <ul class="list-style-none text-center">
+                                                <li class="border-bottom p-4">
+                                                    <i class="ti-user mr-1"></i>Transcribe 10 video
+                                                </li>
+                                                <li class="border-bottom p-4">
+                                                    <i class="ti-user mr-1"></i>Valid for 1 month
+                                                </li>
+                                                <li class="border-bottom p-4">
+                                                    <button class="btn btn-success waves-effect waves-light">Sign up</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card border-top mt-4">
+                                        <div class="p-3 text-center">
+                                            <h4 class="card-title mt-2 text-center">Premium</h4>
+                                            <h2 class="display-5 position-relative mt-3 mb-2">
+                                                <span class="price-sign">$</span>25
+                                            </h2>
+                                            <p>For 30 videos per month</p>
+                                        </div>
+                                        <div class="border-top">
+                                            <ul class="list-style-none text-center">
+                                                <li class="border-bottom p-4">
+                                                    <i class="ti-user mr-1"></i>Transcribe 10 videos
+                                                </li>
+                                                <li class="border-bottom p-4">
+                                                    <i class="ti-user mr-1"></i>Valid for 1 month
+                                                </li>
+                                                <li class="border-bottom p-4">
+                                                    <button class="btn btn-success waves-effect waves-light">Sign up</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card bg-light border-top border-left">
+                                        <h5 class="price-label text-white text-center bg-info">Popular</h5>
+                                        <div class="p-3 text-center">
+                                            <h4 class="card-title mt-5 text-center">Business</h4>
+                                            <h2 class="display-5 position-relative mt-3 mb-2">
+                                                <span class="price-sign">$</span>99
+                                            </h2>
+                                            <p>For unlimited videos per month</p>
+                                        </div>
+                                        <div class="border-top">
+                                            <ul class="list-style-none text-center">
+                                                <li class="border-bottom p-4">
+                                                    <i class="ti-user mr-1"></i>Transcribe unlimited videos
+                                                </li>
+                                                <li class="border-bottom p-4">
+                                                    <i class="ti-user mr-1"></i>Valid for 1 month
+                                                </li>
+                                                <li class="border-bottom p-4">
+                                                    <button class="btn btn-lg btn-info waves-effect waves-light">Sign up</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">
+                   Designed and Developed by VTranscripts Inc.
+            </footer>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <script src="../assets/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- apps -->
+    <script src="../assets/js/app.min.js"></script>
+    <script src="../assets/js/app.init.mini-sidebar.js"></script>
+    <script src="../assets/js/app-style-switcher.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="../../assets/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../../assets/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="../assets/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../assets/js/custom.min.js"></script>
+    <script>
+    $(function() {
+        "use strict";
+        $("#main-wrapper").AdminSettings({
+            Theme: false, // this can be true or false ( true means dark and false means light ),
+            LogoBg: 'skin5', // You can change the Value to be skin1/skin2/skin3/skin4/skin5/skin6 
+            NavbarBg: 'skin5', // You can change the Value to be skin1/skin2/skin3/skin4/skin5/skin6
+            SidebarType: 'full', // You can change it full / mini-sidebar / iconbar / overlay
+            SidebarColor: 'skin5', // You can change the Value to be skin1/skin2/skin3/skin4/skin5/skin6
+            SidebarPosition: true, // it can be true / false ( true means Fixed and false means absolute )
+            HeaderPosition: true, // it can be true / false ( true means Fixed and false means absolute )
+            BoxedLayout: false, // it can be true / false ( true means Boxed and false means Fluid ) 
+        });
+    });
+    </script>
+</body>
+
+</html>
