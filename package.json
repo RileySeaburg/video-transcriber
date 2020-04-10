@@ -1,28 +1,38 @@
 {
-  "name": "video-transcriber",
-  "version": "0.0.1",
-  "description": "A headless nodeJS api that accepts a video and transcribes the speech using Google AI ",
-  "main": "app.js",
-  "scripts": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RileySeaburg/video-transcriber.git"
-  },
-  "keywords": [
-    "video",
-    "transcription",
-    "speech",
-    "to",
-    "text",
-    "nodejs",
-    "nlp"
-  ],
-  "author": "Riley Seaburg",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/RileySeaburg/video-transcriber/issues"
-  },
-  "homepage": "https://github.com/RileySeaburg/video-transcriber#readme"
+	"name": "video-transcriber",
+	"version": "0.0.1",
+	"description": "A headless nodeJS api that accepts a video and transcribes the speech using Google AI ",
+	"main": "server.js",
+	"scripts": {
+		"start": "NODE_ENV=production node server",
+		"dev": "nodemon server"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/RileySeaburg/video-transcriber.git"
+	},
+	"keywords": [
+		"video",
+		"transcription",
+		"speech",
+		"to",
+		"text",
+		"nodejs",
+		"nlp"
+	],
+	"author": "Riley Seaburg",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/RileySeaburg/video-transcriber/issues"
+	},
+	"homepage": "https://github.com/RileySeaburg/video-transcriber#readme",
+	"dependencies": {
+		"@google-cloud/speech": "^3.6.0",
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"ffmpeg": "0.0.4"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.3"
+	}
 }
