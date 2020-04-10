@@ -1,0 +1,28 @@
+{
+  "name": "video-transcriber",
+  "version": "0.0.1",
+  "description": "A headless nodeJS api that accepts a video and transcribes the speech using Google AI ",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RileySeaburg/video-transcriber.git"
+  },
+  "keywords": [
+    "video",
+    "transcription",
+    "speech",
+    "to",
+    "text",
+    "nodejs",
+    "nlp"
+  ],
+  "author": "Riley Seaburg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RileySeaburg/video-transcriber/issues"
+  },
+  "homepage": "https://github.com/RileySeaburg/video-transcriber#readme"
+}
